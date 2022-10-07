@@ -2,20 +2,35 @@
   <div>
     <v-app-bar
         app
-        color="primary"
+        color="primary lighten-1"
         dark
     >
+      <v-text class="logoFont"> Favorite-Books-App</v-text>
+
       <v-spacer></v-spacer>
+      <v-btn
+        color="error"
+        @click="deleteLocalStorage">
+        削除する
+      </v-btn>
     </v-app-bar>
   </div>
 </template>
 
 <script>
 export default {
-  name: "HeaderBar"
+  name: "HeaderBar",
+  methods:{
+    deleteLocalStorage(){
+      this.$emit('delete-local-storage')
+    }
+  },
 }
 </script>
 
 <style scoped>
+.logoFont{
+  font-size: 30px
+}
 
 </style>
